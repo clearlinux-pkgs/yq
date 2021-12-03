@@ -1,5 +1,5 @@
 PKG_NAME := yq
-URL = https://files.pythonhosted.org/packages/c0/1b/fe6b9ab599384e95c9b7a63e4801409170fccfc107d03573cc4bb5df49f0/yq-2.12.2.tar.gz
+URL = https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
