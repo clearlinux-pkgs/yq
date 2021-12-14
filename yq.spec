@@ -4,7 +4,7 @@
 #
 Name     : yq
 Version  : 2.13.0
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
 Summary  : Command-line YAML/XML processor - jq wrapper for YAML/XML documents
