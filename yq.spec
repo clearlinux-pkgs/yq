@@ -6,7 +6,7 @@
 #
 Name     : yq
 Version  : 2.13.0
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
 Source1  : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz.asc
@@ -18,6 +18,10 @@ Requires: yq-license = %{version}-%{release}
 Requires: yq-python = %{version}-%{release}
 Requires: yq-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(argcomplete)
+BuildRequires : pypi(pyyaml)
+BuildRequires : pypi(toml)
+BuildRequires : pypi(xmltodict)
 
 %description
 yq: Command-line YAML/XML/TOML processor - jq wrapper for YAML, XML, TOML documents
@@ -53,6 +57,11 @@ python components for the yq package.
 Summary: python3 components for the yq package.
 Group: Default
 Requires: python3-core
+Provides: pypi(yq)
+Requires: pypi(argcomplete)
+Requires: pypi(pyyaml)
+Requires: pypi(toml)
+Requires: pypi(xmltodict)
 
 %description python3
 python3 components for the yq package.
@@ -67,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641416369
+export SOURCE_DATE_EPOCH=1641483577
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
