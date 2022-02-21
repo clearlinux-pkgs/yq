@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x8AFAFCD242818A52 (kislyuk@gmail.com)
 #
 Name     : yq
-Version  : 2.13.0
-Release  : 5
-URL      : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz
-Source1  : https://files.pythonhosted.org/packages/77/8f/b7e9da70e379a0250096b953fa40f504a99bddd641b373cd99f8e0417c3d/yq-2.13.0.tar.gz.asc
+Version  : 2.14.0
+Release  : 6
+URL      : https://files.pythonhosted.org/packages/e4/df/9c2efc3c99c07a4bd09dfd763fc87d1e50db0ee3c67ad2ffe418f523ae4e/yq-2.14.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e4/df/9c2efc3c99c07a4bd09dfd763fc87d1e50db0ee3c67ad2ffe418f523ae4e/yq-2.14.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/e4/df/9c2efc3c99c07a4bd09dfd763fc87d1e50db0ee3c67ad2ffe418f523ae4e/yq-2.14.0.tar.gz.asc
 Summary  : Command-line YAML/XML processor - jq wrapper for YAML/XML documents
 Group    : Development/Tools
 License  : Apache-2.0
@@ -20,6 +20,7 @@ Requires: yq-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(argcomplete)
 BuildRequires : pypi(pyyaml)
+BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi(toml)
 BuildRequires : pypi(xmltodict)
 
@@ -68,15 +69,15 @@ python3 components for the yq package.
 
 
 %prep
-%setup -q -n yq-2.13.0
-cd %{_builddir}/yq-2.13.0
+%setup -q -n yq-2.14.0
+cd %{_builddir}/yq-2.14.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641483577
+export SOURCE_DATE_EPOCH=1645468205
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -92,7 +93,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/yq
-cp %{_builddir}/yq-2.13.0/LICENSE %{buildroot}/usr/share/package-licenses/yq/172ca3bbafe312a1cf09cfff26953db2f425c28e
+cp %{_builddir}/yq-2.14.0/LICENSE %{buildroot}/usr/share/package-licenses/yq/172ca3bbafe312a1cf09cfff26953db2f425c28e
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
