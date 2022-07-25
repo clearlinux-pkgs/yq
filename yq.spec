@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x8AFAFCD242818A52 (kislyuk@gmail.com)
 #
 Name     : yq
-Version  : 3.0.2
-Release  : 8
-URL      : https://files.pythonhosted.org/packages/fc/0b/93a830fe6f75acaf2c052966b2c5f98aa3a18c08ca99b1621b60dd74e453/yq-3.0.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/fc/0b/93a830fe6f75acaf2c052966b2c5f98aa3a18c08ca99b1621b60dd74e453/yq-3.0.2.tar.gz
-Source1  : https://files.pythonhosted.org/packages/fc/0b/93a830fe6f75acaf2c052966b2c5f98aa3a18c08ca99b1621b60dd74e453/yq-3.0.2.tar.gz.asc
+Version  : 3.1.0
+Release  : 9
+URL      : https://files.pythonhosted.org/packages/55/b2/0c4409c0e677ea9e6870538b4cdf4959fad92a8aaa73ee41cf03876bddf9/yq-3.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/55/b2/0c4409c0e677ea9e6870538b4cdf4959fad92a8aaa73ee41cf03876bddf9/yq-3.1.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/55/b2/0c4409c0e677ea9e6870538b4cdf4959fad92a8aaa73ee41cf03876bddf9/yq-3.1.0.tar.gz.asc
 Summary  : Command-line YAML/XML processor - jq wrapper for YAML/XML documents
 Group    : Development/Tools
 License  : Apache-2.0
@@ -69,10 +69,10 @@ python3 components for the yq package.
 
 
 %prep
-%setup -q -n yq-3.0.2
-cd %{_builddir}/yq-3.0.2
+%setup -q -n yq-3.1.0
+cd %{_builddir}/yq-3.1.0
 pushd ..
-cp -a yq-3.0.2 buildavx2
+cp -a yq-3.1.0 buildavx2
 popd
 
 %build
@@ -80,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1657061605
+export SOURCE_DATE_EPOCH=1658766147
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -105,7 +105,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/yq
-cp %{_builddir}/yq-3.0.2/LICENSE %{buildroot}/usr/share/package-licenses/yq/172ca3bbafe312a1cf09cfff26953db2f425c28e
+cp %{_builddir}/yq-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/yq/172ca3bbafe312a1cf09cfff26953db2f425c28e
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
