@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : yq
-Version  : 3.2.1
-Release  : 16
-URL      : https://files.pythonhosted.org/packages/82/09/110ed5ef1e1afb4e87e256b322f88bbfaa9fe59eb5f30d1764e0741c0735/yq-3.2.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/82/09/110ed5ef1e1afb4e87e256b322f88bbfaa9fe59eb5f30d1764e0741c0735/yq-3.2.1.tar.gz
+Version  : 3.2.2
+Release  : 17
+URL      : https://files.pythonhosted.org/packages/90/a0/ddb66d2e527626288a9b526af5c21bc0e590622faa1d0425808ad75f6bc5/yq-3.2.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/90/a0/ddb66d2e527626288a9b526af5c21bc0e590622faa1d0425808ad75f6bc5/yq-3.2.2.tar.gz
 Summary  : Command-line YAML/XML processor - jq wrapper for YAML/XML documents
 Group    : Development/Tools
 License  : Apache-2.0
@@ -65,10 +65,10 @@ python3 components for the yq package.
 
 
 %prep
-%setup -q -n yq-3.2.1
-cd %{_builddir}/yq-3.2.1
+%setup -q -n yq-3.2.2
+cd %{_builddir}/yq-3.2.2
 pushd ..
-cp -a yq-3.2.1 buildavx2
+cp -a yq-3.2.2 buildavx2
 popd
 
 %build
@@ -76,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680708817
+export SOURCE_DATE_EPOCH=1682277478
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
